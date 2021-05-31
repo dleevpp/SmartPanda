@@ -39,19 +39,27 @@
 
       <v-toolbar-title>SmartPanda</v-toolbar-title>
     </v-app-bar>
-    <v-row></v-row>
+    <v-row
+    class="d-flex"
+    justify="center">
+
+
     <v-banner min-height="500">
 
     <v-img
     :src="require('@/assets/PANDA.png')"
     :max-width="800"
+    :background-position="center"
     >
-
     </v-img>
-  </v-banner>
-  <v-toolbar>
+    </v-banner>
+  </v-row>
+  <v-toolbar dense='true'
+  outlined
+  max-height="0">
     <v-tabs
       grow
+      align-with-title
     >
     <v-menu offset-y>
       <template v-slot:activator="{ on, attrs }">
@@ -61,6 +69,7 @@
           v-on="on"
         >
           애플
+
         </v-tab>
       </template>
       <v-list>
@@ -179,7 +188,6 @@
         </v-list-item>
       </v-list>
     </v-menu>
-
     </v-tabs>
   </v-toolbar>
     <v-main>
@@ -202,7 +210,7 @@
           { title: '로그인', icon: 'mdi-help-box', to: '/Login'},
           { title: '고객센터', icon: 'mdi-headphones', to: '/customer_center'},
         ],
-            apple:[
+              apple:[
               {title: '아이폰', to:'/'},
               {title: '애플워치', to:'/'},
               {title: '에어팟', to:'/'},

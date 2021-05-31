@@ -2,142 +2,25 @@
   <v-container
   fluid
   >
-    <v-card class="pa-3">
-      <v-row>
-        <v-col>
-          <v-card
-          class="pa-3"
-          outlined
-          >
-            col
-          </v-card>
-        </v-col>
-        <v-col>
-          <v-card
-          class="pa-3"
-          outlined
-          >
-            col
-          </v-card>
-        </v-col>
-        <v-col>
-          <v-card
-          class="pa-3"
-          outlined
-          >
-            col
-          </v-card>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col>
-          <v-card
-          class="pa-3"
-          outlined
-          >
-            col
-          </v-card>
-        </v-col>
-        <v-col>
-          <v-card
-          class="pa-3"
-          outlined
-          >
-            col
-          </v-card>
-        </v-col>
-        <v-col>
-          <v-card
-          class="pa-3"
-          outlined
-          >
-            col
-          </v-card>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col>
-          <v-card
-          class="pa-3"
-          outlined
-          >
-            col
-          </v-card>
-        </v-col>
-        <v-col>
-          <v-card
-          class="pa-3"
-          outlined
-          >
-            col
-          </v-card>
-        </v-col>
-        <v-col>
-          <v-card
-          class="pa-3"
-          outlined
-          >
-            col
-          </v-card>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col>
-          <v-card
-          class="pa-3"
-          outlined
-          >
-            col
-          </v-card>
-        </v-col>
-        <v-col>
-          <v-card
-          class="pa-3"
-          outlined
-          >
-            col
-          </v-card>
-        </v-col>
-        <v-col>
-          <v-card
-          class="pa-3"
-          outlined
-          >
-            col
-          </v-card>
-        </v-col>
-      </v-row>
-      <v-row
-      :style = "{height:'120px'}"
-      class="yellow"
-      align="center">
-        <v-col
-        align-self="end">
-          <v-card
-          class="pa-3"
-          outlined
-          >
-            col
-          </v-card>
-        </v-col>
-        <v-col>
-          <v-card
-          class="pa-3"
-          outlined
-          >
-            col
-          </v-card>
-        </v-col>
-        <v-col>
-          <v-card
-          class="pa-3"
-          outlined
-          >
-            col
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-card>
+  <v-row
+    justify= "space-around">
+      <v-col
+      v-for="count in 12"
+      :key="count"
+      cols="3"
+      >
+      <v-card
+      class="pa-3"
+      outlined
+      >
+      아이템 이미지
+      <v-card>아이템은 이런거다</v-card>
+      </v-card>
+
+      </v-col>
+    </v-row>
+
+
 
   </v-container>
 </template>

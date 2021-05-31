@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <v-container>
     주문조회
-  </div>
+  </v-container>
 </template>
 <script>
 export default {
-    
+
 }
 </script>
 <style lang="">
-    
+
 </style>

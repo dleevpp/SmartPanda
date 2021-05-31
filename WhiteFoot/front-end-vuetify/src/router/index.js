@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Main from '../views/Main.vue'
+import Main from '../views/Main'
 import About from '@/views/About'
 import Cart from '@/views/Cart'
 import customer_center from '@/views/customer_center'

@@ -7,7 +7,7 @@
       <v-col
       v-for="count in 12"
       :key="count"
-      cols="auto"
+      cols="3"
       >
       <v-card
       class="pa-3"

@@ -12,9 +12,7 @@
           <v-list-item-subtitle />
         </v-list-item-content>
       </v-list-item>
-
       <v-divider />
-
       <v-list
         dense
         nav
@@ -41,9 +39,153 @@
 
       <v-toolbar-title>SmartPanda</v-toolbar-title>
     </v-app-bar>
+    <v-row></v-row>
+    <v-banner min-height="500">
 
+    <v-img
+    :src="require('@/assets/PANDA.png')"
+    :max-width="800"
+    >
+
+    </v-img>
+  </v-banner>
+  <v-toolbar>
+    <v-tabs
+      grow
+    >
+    <v-menu offset-y>
+      <template v-slot:activator="{ on, attrs }">
+        <v-tab
+          color="primary"
+          v-bind="attrs"
+          v-on="on"
+        >
+          애플
+        </v-tab>
+      </template>
+      <v-list>
+        <v-list-item
+          v-for="item in apple"
+          :key="item.title"
+          :to="item.to"
+          link
+        >
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
+    <v-menu offset-y>
+      <template v-slot:activator="{ on, attrs }">
+        <v-tab
+          color="primary"
+          v-bind="attrs"
+          v-on="on"
+        >
+          삼성
+        </v-tab>
+      </template>
+      <v-list>
+        <v-list-item
+          v-for="item in samsung"
+          :key="item.title"
+          :to="item.to"
+          link
+        >
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
+    <v-menu offset-y>
+      <template v-slot:activator="{ on, attrs }">
+        <v-tab
+          color="primary"
+          v-bind="attrs"
+          v-on="on"
+        >
+          케이스
+        </v-tab>
+      </template>
+      <v-list>
+        <v-list-item
+          v-for="item in cases"
+          :key="item.title"
+          :to="item.to"
+          link
+        >
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
+    <v-menu offset-y>
+      <template v-slot:activator="{ on, attrs }">
+        <v-tab
+          color="primary"
+          v-bind="attrs"
+          v-on="on"
+        >
+          필름
+        </v-tab>
+      </template>
+      <v-list>
+        <v-list-item
+          v-for="item in film"
+          :key="item.title"
+          :to="item.to"
+          link
+        >
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
+    <v-menu offset-y>
+      <template v-slot:activator="{ on, attrs }">
+        <v-tab
+          color="gray"
+          v-bind="attrs"
+          v-on="on"
+        >
+          충전용품
+        </v-tab>
+      </template>
+      <v-list>
+        <v-list-item
+          v-for="item in charger"
+          :key="item.title"
+          :to="item.to"
+          link
+        >
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
+    <v-menu offset-y>
+      <template v-slot:activator="{ on, attrs }">
+        <v-tab
+          color="primary"
+          v-bind="attrs"
+          v-on="on"
+        >
+          차량용품
+        </v-tab>
+      </template>
+      <v-list>
+        <v-list-item
+          v-for="item in car"
+          :key="item.title"
+          :to="item.to"
+          link
+        >
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
+
+    </v-tabs>
+  </v-toolbar>
     <v-main>
+      <v-container fluid>
       <router-view />
+      </v-container>
     </v-main>
   </v-app>
 </template>
@@ -60,6 +202,33 @@
           { title: '로그인', icon: 'mdi-help-box', to: '/Login'},
           { title: '고객센터', icon: 'mdi-headphones', to: '/customer_center'},
         ],
+            apple:[
+              {title: '아이폰', to:'/'},
+              {title: '애플워치', to:'/'},
+              {title: '에어팟', to:'/'},
+            ],
+            samsung:[
+              {title: '갤럭시', to:'/'},
+              {title: '갤럭시워치', to:'/'},
+              {title: '버즈', to:'/'}
+            ],
+            cases:[
+              {title:'소재별', to:'/'},
+              {title:'기능별', to:'/'}
+            ],
+            film:[
+              {title:'소재별', to:'/'},
+              {title:'기능별', to:'/'}
+            ],
+            charger:[
+              {title:'고속 충전', to:'/'},
+              {title:'보조배터리',to:'/'},
+            ],
+            car:[
+              {title:'충전기', to:'/'},
+              {title:'거치대', to:'/'}
+            ],
+
      }),
   }
 </script>

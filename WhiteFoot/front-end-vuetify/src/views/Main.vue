@@ -1,15 +1,152 @@
-<template>
-  <hello-world />
+<template >
+  <v-container
+  fluid
+  >
+    <v-card class="pa-3">
+      <v-row>
+        <v-col>
+          <v-card
+          class="pa-3"
+          outlined
+          >
+            col
+          </v-card>
+        </v-col>
+        <v-col>
+          <v-card
+          class="pa-3"
+          outlined
+          >
+            col
+          </v-card>
+        </v-col>
+        <v-col>
+          <v-card
+          class="pa-3"
+          outlined
+          >
+            col
+          </v-card>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col>
+          <v-card
+          class="pa-3"
+          outlined
+          >
+            col
+          </v-card>
+        </v-col>
+        <v-col>
+          <v-card
+          class="pa-3"
+          outlined
+          >
+            col
+          </v-card>
+        </v-col>
+        <v-col>
+          <v-card
+          class="pa-3"
+          outlined
+          >
+            col
+          </v-card>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col>
+          <v-card
+          class="pa-3"
+          outlined
+          >
+            col
+          </v-card>
+        </v-col>
+        <v-col>
+          <v-card
+          class="pa-3"
+          outlined
+          >
+            col
+          </v-card>
+        </v-col>
+        <v-col>
+          <v-card
+          class="pa-3"
+          outlined
+          >
+            col
+          </v-card>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col>
+          <v-card
+          class="pa-3"
+          outlined
+          >
+            col
+          </v-card>
+        </v-col>
+        <v-col>
+          <v-card
+          class="pa-3"
+          outlined
+          >
+            col
+          </v-card>
+        </v-col>
+        <v-col>
+          <v-card
+          class="pa-3"
+          outlined
+          >
+            col
+          </v-card>
+        </v-col>
+      </v-row>
+      <v-row
+      :style = "{height:'120px'}"
+      class="yellow"
+      align="center">
+        <v-col
+        align-self="end">
+          <v-card
+          class="pa-3"
+          outlined
+          >
+            col
+          </v-card>
+        </v-col>
+        <v-col>
+          <v-card
+          class="pa-3"
+          outlined
+          >
+            col
+          </v-card>
+        </v-col>
+        <v-col>
+          <v-card
+          class="pa-3"
+          outlined
+          >
+            col
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-card>
+
+  </v-container>
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+export default {
 
-  export default {
-    name: 'Main',
-
-    components: {
-      HelloWorld,
-    },
-  }
+}
 </script>
+<style lang="">
+
+</style>

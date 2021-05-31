@@ -39,7 +39,7 @@
     <v-app-bar app>
       <v-app-bar-nav-icon @click="drawer = !drawer" />
 
-      <v-toolbar-title>Application</v-toolbar-title>
+      <v-toolbar-title>SmartPanda</v-toolbar-title>
     </v-app-bar>
 
     <v-main>
@@ -54,11 +54,11 @@
       drawer: null,
               items: [
           { title: '메인페이지', icon: 'mdi-home-variant-outline', to: '/Main'},
-          { title: '마이페이지', icon: 'mdi-help-box', to: '/MyPage'},
-          { title: '주문조회', icon: 'mdi-help-box', to: '/Order_list'},
-          { title: '회원가입', icon: 'mdi-help-box', to: '/Join'},
+          { title: '마이페이지', icon: 'mdi-file-account-outline', to: '/MyPage'},
+          { title: '주문조회', icon: 'mdi-cart', to: '/Order_list'},
+          { title: '회원가입', icon: 'mdi-login-variant', to: '/Join'},
           { title: '로그인', icon: 'mdi-help-box', to: '/Login'},
-          { title: '고객센터', icon: 'mdi-help-box', to: '/customer_center'},
+          { title: '고객센터', icon: 'mdi-headphones', to: '/customer_center'},
         ],
      }),
   }

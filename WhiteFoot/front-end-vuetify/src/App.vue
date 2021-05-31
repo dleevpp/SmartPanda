@@ -4,18 +4,16 @@
       v-model="drawer"
       app
     >
-    <v-list-item>
+      <v-list-item>
         <v-list-item-content>
-          <v-list-item-title class="title">
+          <v-list-item-title class="text-h6">
             SmartPanda
           </v-list-item-title>
-          <v-list-item-subtitle>
-            
-          </v-list-item-subtitle>
+          <v-list-item-subtitle />
         </v-list-item-content>
       </v-list-item>
 
-      <v-divider></v-divider>
+      <v-divider />
 
       <v-list
         dense
@@ -39,24 +37,28 @@
     </v-navigation-drawer>
 
     <v-app-bar app>
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="drawer = !drawer" />
 
       <v-toolbar-title>Application</v-toolbar-title>
     </v-app-bar>
 
     <v-main>
-      <router-view></router-view>
+      <router-view />
     </v-main>
   </v-app>
 </template>
 
 <script>
   export default {
-    data: () => ({ 
+    data: () => ({
       drawer: null,
               items: [
-          { title: 'Main', icon: 'mdi-home-variant-outline', to: '/Main'},
-          { title: 'About', icon: 'mdi-help-box', to: '/about'},
+          { title: '메인페이지', icon: 'mdi-home-variant-outline', to: '/Main'},
+          { title: '마이페이지', icon: 'mdi-help-box', to: '/MyPage'},
+          { title: '주문조회', icon: 'mdi-help-box', to: '/Order_list'},
+          { title: '회원가입', icon: 'mdi-help-box', to: '/Join'},
+          { title: '로그인', icon: 'mdi-help-box', to: '/Login'},
+          { title: '고객센터', icon: 'mdi-help-box', to: '/customer_center'},
         ],
      }),
   }

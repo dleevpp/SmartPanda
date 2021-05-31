@@ -13,5 +13,14 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+  },
+  extends: [
+    'plugin:vue/recommended'
+  ],
+  plugins: [
+    'vuetify'
+  ],
+  rules: {
+    'vuetify/no-deprecated-classes': 'error'
   }
 }

@@ -37,7 +37,7 @@
     <v-row align="center">
       <v-col cols='auto'></v-col>
       <v-col cols='auto'></v-col>
-      <v-col>   *본인은 만 14세 이상이며, 개인정보 처리방침 및 이용약관을 확인하였으며 이에 동의합니다.
+      <v-col>   *본인은 만 14세 이상이며,<a href="privacy_inform_policy"> 개인정보 처리방침</a> 및 <a href="user_yakgwan">이용약관</a>을 확인하였으며 이에 동의합니다.
       </v-col>
     </v-row>
      <v-btn block

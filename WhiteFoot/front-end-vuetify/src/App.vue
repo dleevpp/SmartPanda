@@ -33,11 +33,11 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-
     <v-app-bar app>
       <v-app-bar-nav-icon @click="drawer = !drawer" />
 
       <v-toolbar-title>SmartPanda</v-toolbar-title>
+
     </v-app-bar>
     <v-row
     class="d-flex"
@@ -54,6 +54,7 @@
     </v-img>
     </v-banner>
   </v-row>
+  <v-container fluid>
   <v-toolbar dense='true'
   outlined
   max-height="0">
@@ -190,6 +191,7 @@
     </v-menu>
     </v-tabs>
   </v-toolbar>
+  </v-container>
     <v-main>
       <v-container fluid>
       <router-view />

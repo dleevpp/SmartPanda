@@ -41,6 +41,7 @@
       </v-col>
     </v-row>
      <v-btn block
+      type="submit"
   color="primary">
     동의하고 회원가입
   </v-btn>

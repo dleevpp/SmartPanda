@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1> Smart Panda {{animal}}</h1>
-    <h2> 팬더는 {{food}} 를 좋아합니다.</h2>
+    <h2> 한수는 {{food}} 를 좋아합니다.</h2>
     <h3 v-text = "food"></h3>
     <input type = "text" v-model = "food"/>
     <div v-html="alertMessage"></div>
@@ -9,7 +9,7 @@
     <img v-bind:src = "imageSource" alt="random">
     <a :href="food">{{food}}</a>
     <hr/>
-    <h2 v-bind:class="{ red : food==='apple','not-good': food!=='apple' }">원숭이는 {{food}}를 좋아합니다</h2>
+    <h2 v-bind:class="{ orange : food==='orange','not-good': food!=='orange' }">한수는 {{food}}를 좋아합니다</h2>
   </div>
 </template>
 //화면

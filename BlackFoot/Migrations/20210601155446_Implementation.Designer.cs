@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlackFoot.Migrations
 {
     [DbContext(typeof(SqliteDbContext))]
-    [Migration("20210601110510_ImplementDesign")]
-    partial class ImplementDesign
+    [Migration("20210601155446_Implementation")]
+    partial class Implementation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,7 +33,7 @@ namespace BlackFoot.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Coupon");
+                    b.ToTable("Coupons");
                 });
 
             modelBuilder.Entity("BlackFoot.Models.Inquiry", b =>
@@ -51,7 +51,7 @@ namespace BlackFoot.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Inquiry");
+                    b.ToTable("Inquiries");
                 });
 
             modelBuilder.Entity("BlackFoot.Models.Order", b =>
@@ -82,7 +82,7 @@ namespace BlackFoot.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Order");
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("BlackFoot.Models.Product", b =>
@@ -122,7 +122,7 @@ namespace BlackFoot.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Product");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("BlackFoot.Models.Question", b =>
@@ -140,7 +140,7 @@ namespace BlackFoot.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Question");
+                    b.ToTable("Questions");
                 });
 
             modelBuilder.Entity("BlackFoot.Models.Reply", b =>
@@ -155,7 +155,7 @@ namespace BlackFoot.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Reply");
+                    b.ToTable("Replies");
                 });
 
             modelBuilder.Entity("BlackFoot.Models.Role", b =>
@@ -170,7 +170,7 @@ namespace BlackFoot.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Role");
+                    b.ToTable("Roles");
                 });
 
             modelBuilder.Entity("BlackFoot.Models.User", b =>

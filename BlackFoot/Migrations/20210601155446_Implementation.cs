@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BlackFoot.Migrations
 {
-    public partial class ImplementDesign : Migration
+    public partial class Implementation : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Coupon",
+                name: "Coupons",
                 columns: table => new
                 {
                     Id = table.Column<long>(type: "INTEGER", nullable: false)
@@ -18,11 +18,11 @@ namespace BlackFoot.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Coupon", x => x.Id);
+                    table.PrimaryKey("PK_Coupons", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Inquiry",
+                name: "Inquiries",
                 columns: table => new
                 {
                     Id = table.Column<long>(type: "INTEGER", nullable: false)
@@ -32,11 +32,11 @@ namespace BlackFoot.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Inquiry", x => x.Id);
+                    table.PrimaryKey("PK_Inquiries", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Order",
+                name: "Orders",
                 columns: table => new
                 {
                     Id = table.Column<long>(type: "INTEGER", nullable: false)
@@ -48,11 +48,11 @@ namespace BlackFoot.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Order", x => x.Id);
+                    table.PrimaryKey("PK_Orders", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Product",
+                name: "Products",
                 columns: table => new
                 {
                     Id = table.Column<long>(type: "INTEGER", nullable: false)
@@ -67,11 +67,11 @@ namespace BlackFoot.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Product", x => x.Id);
+                    table.PrimaryKey("PK_Products", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Question",
+                name: "Questions",
                 columns: table => new
                 {
                     Id = table.Column<long>(type: "INTEGER", nullable: false)
@@ -81,11 +81,11 @@ namespace BlackFoot.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Question", x => x.Id);
+                    table.PrimaryKey("PK_Questions", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Reply",
+                name: "Replies",
                 columns: table => new
                 {
                     Id = table.Column<long>(type: "INTEGER", nullable: false)
@@ -94,11 +94,11 @@ namespace BlackFoot.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Reply", x => x.Id);
+                    table.PrimaryKey("PK_Replies", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Role",
+                name: "Roles",
                 columns: table => new
                 {
                     Id = table.Column<long>(type: "INTEGER", nullable: false)
@@ -107,7 +107,7 @@ namespace BlackFoot.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Role", x => x.Id);
+                    table.PrimaryKey("PK_Roles", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -131,25 +131,25 @@ namespace BlackFoot.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Coupon");
+                name: "Coupons");
 
             migrationBuilder.DropTable(
-                name: "Inquiry");
+                name: "Inquiries");
 
             migrationBuilder.DropTable(
-                name: "Order");
+                name: "Orders");
 
             migrationBuilder.DropTable(
-                name: "Product");
+                name: "Products");
 
             migrationBuilder.DropTable(
-                name: "Question");
+                name: "Questions");
 
             migrationBuilder.DropTable(
-                name: "Reply");
+                name: "Replies");
 
             migrationBuilder.DropTable(
-                name: "Role");
+                name: "Roles");
 
             migrationBuilder.DropTable(
                 name: "Users");

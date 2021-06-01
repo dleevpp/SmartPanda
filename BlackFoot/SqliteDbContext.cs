@@ -16,10 +16,6 @@ namespace BlackFoot
         .Property(p => p.Discount)
         .IsRequired();
 
-      modelBuilder.Entity<Inquiry>()
-        .Property(p => p.Title)
-        .IsRequired();
-      
       modelBuilder.Entity<Order>()
         .Property(p => p.CreatedAt)
         .HasDefaultValueSql("date('now')");
@@ -57,6 +53,10 @@ namespace BlackFoot
         .Property(p => p.Content)
         .IsRequired();
       
+      modelBuilder.Entity<Review>()
+        .Property(p => p.Rating)
+        .HasDefaultValue(0);
+      
       modelBuilder.Entity<Role>()
         .Property(p => p.Name)
         .IsRequired();
@@ -72,6 +72,13 @@ namespace BlackFoot
         .HasDefaultValue(1000);
     }
     private static readonly string connectionString = @"Data Source=db.sqlite";
+    public DbSet<Coupon> Coupons { get; set; }
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<Product> Products { get; set; }
+    public DbSet<Question> Questions { get; set; }
+    public DbSet<Reply> Replies { get; set; }
+    public DbSet<Review> Reviews { get; set; }
+    public DbSet<Role> Roles { get; set; }
     public DbSet<User> Users { get; set; }
   }
 }

@@ -4,6 +4,7 @@
   >
   <v-row
     justify= "space-around">
+
       <v-col
       v-for="count in 12"
       :key="count"

@@ -1,7 +1,5 @@
 <template>
-  <div>
-    장바구니
-  </div>
+  <div>카트</div>
 </template>
 <script>
 export default {

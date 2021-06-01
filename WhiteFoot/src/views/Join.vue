@@ -1,23 +1,28 @@
 <template>
    <v-form v-model="valid">
     <v-container>
-
+      <v-row>
+        <v-col>기본정보</v-col>
+        <v-spacer/>
+        <v-col>*필수입력사항</v-col>
+      </v-row>
+      <v-spacer/>
       <v-row>
           <v-text-field
             :counter="10"
-            label="아이디"
+            label="* 아이디"
             required
           ></v-text-field>
       </v-row>
         <v-row>
           <v-text-field
-            label="비밀번호"
+            label="* 비밀번호"
             required
           ></v-text-field>
         </v-row>
         <v-row>
           <v-text-field
-            label="비밀번호 확인"
+            label="* 비밀번호 확인"
             required
           ></v-text-field>
         </v-row>

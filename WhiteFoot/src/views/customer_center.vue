@@ -4,35 +4,33 @@
       <th rowspan="200">고객센터</th>
     </v-banner>
     <v-simple-table>
-    <template v-slot:default>
-      <thead>
-        <th>문의사항</th>
-        <tr>
-          <th class="text-left">
-            제목
-          </th>
-          <th class="text-left">
-            날짜
-          </th>
-          <th class="text-left">
-            작성자
-          </th>
-
-
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          v-for="item in QA"
-          :key="item.title"
-        >
-          <td>{{ item.title }}</td>
-          <td>{{ item.date }}</td>
-          <td>{{ item.writer }}</td>
-        </tr>
-      </tbody>
-    </template>
-  </v-simple-table>
+      <template v-slot:default>
+        <thead>
+          <th>문의사항</th>
+          <tr>
+            <th class="text-left">
+              제목
+            </th>
+            <th class="text-left">
+              날짜
+            </th>
+            <th class="text-left">
+              작성자
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="item in QA"
+            :key="item.title"
+          >
+            <td>{{ item.title }}</td>
+            <td>{{ item.date }}</td>
+            <td>{{ item.writer }}</td>
+          </tr>
+        </tbody>
+      </template>
+    </v-simple-table>
   </v-container>
 </template>
 

@@ -12,9 +12,7 @@
         <v-container fluid>
           <v-row>
             <v-col
-
-              cols="12"
-              md="4"
+              cols="24"
             >
                <v-simple-table>
                 <template v-slot:default>
@@ -29,7 +27,6 @@
                     </tr>
                   </thead>
                   <tbody>
-
                     <tr
                       v-for="item in desserts"
                       :key="item.name"

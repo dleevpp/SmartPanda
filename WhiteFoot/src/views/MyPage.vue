@@ -15,7 +15,6 @@
       >
       마이페이지
       </v-card>
-
       </v-col>
     </v-row>
   </v-container>

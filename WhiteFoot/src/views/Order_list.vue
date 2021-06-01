@@ -36,6 +36,10 @@
                     >
                       <td>{{ item.name }}</td>
                       <td>{{ item.calories }}</td>
+                      <td>수량</td>
+                      <td>가격</td>
+                      <td>order상태</td>
+                      <td>취소/반품/고환</td>
                     </tr>
                   </tbody>
                 </template>

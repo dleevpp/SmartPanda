@@ -42,8 +42,9 @@
       return {
         QA: [
           {
-            title: 'Frozen Yogurt',
-            date: 159,
+            title: 'title1',
+            date: '2021-04-18',
+            writer: 'User1'
           },
           {
             title: 'Ice cream sandwich',

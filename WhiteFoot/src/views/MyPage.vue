@@ -44,7 +44,6 @@
       <v-col>숫자
         <v-row>입금 확인</v-row>
       </v-col>
-
       <v-col>></v-col>
       <v-col>숫자
         <v-row>배송 준비</v-row>

@@ -23,7 +23,7 @@
       </thead>
       <tbody>
         <tr
-          v-for="item in desserts"
+          v-for="item in QA"
           :key="item.title"
         >
           <td>{{ item.title }}</td>
@@ -40,7 +40,7 @@
   export default {
     data () {
       return {
-        desserts: [
+        QA: [
           {
             title: 'Frozen Yogurt',
             date: 159,

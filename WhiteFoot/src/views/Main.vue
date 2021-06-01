@@ -29,9 +29,12 @@
       </v-sheet>
     </v-carousel-item>
   </v-carousel>
-
+<v-divider></v-divider>
   <v-row>
+    <v-row></v-row>
+    <v-row>
     Best Seller
+    </v-row>
     <v-row justify= "space-around">
       <v-col
       v-for="count in 12"

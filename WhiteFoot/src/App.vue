@@ -206,10 +206,11 @@
               items: [
           { title: '메인페이지', icon: 'mdi-home-variant-outline', to: '/'},
           { title: '마이페이지', icon: 'mdi-file-account-outline', to: '/MyPage'},
-          { title: '주문조회', icon: 'mdi-cart', to: '/Order_list'},
+          { title: '장바구니', icon: 'mdi-cart', to: '/cart'},
+          { title: '주문조회', icon: 'mdi-lingerie', to: '/Order_list'},
           { title: '회원가입', icon: 'mdi-login-variant', to: '/Join'},
-          { title: '로그인', icon: 'mdi-help-box', to: '/Login'},
-          { title: '고객센터', icon: 'mdi-headphones', to: '/customer_center'},
+          { title: '로그인', icon: 'mdi-key', to: '/Login'},
+          { title: '고객센터', icon: 'mdi-help-box', to: '/customer_center'},
         ],
               apple:[
               {title: '아이폰', to:'/'},

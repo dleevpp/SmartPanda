@@ -25,10 +25,10 @@
     </v-card-title>
   </v-card>
     <v-row align = 'center'
-    justify="center"
+    justify= "space-around"
     no-gutters>
-    <v-col>아이디 찾기</v-col>
-    <v-col>비밀번호 찾기</v-col>
+    <v-col><a href="find_id">아이디 찾기</a></v-col>
+    <v-col><a href="find_pw">비밀번호 찾기</a></v-col>
     <v-col><a href="Join">회원가입</a></v-col>
     </v-row>
 

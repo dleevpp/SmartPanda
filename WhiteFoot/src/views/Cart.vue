@@ -1,5 +1,5 @@
 <template>
-  <v-simple-table dense>
+  <v-simple-table dense height="300px">
     <template v-slot:default>
       <thead>
         <th>

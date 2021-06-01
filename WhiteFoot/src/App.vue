@@ -38,10 +38,10 @@
 
       <v-toolbar-title>SmartPanda</v-toolbar-title>
       <v-col aria-colspan="7"></v-col>
-      <v-col><v-btn>로그인</v-btn></v-col>
-      <v-col><v-btn>회원가입</v-btn></v-col>
-      <v-col><v-btn>주문조회</v-btn></v-col>
-      <v-col><v-btn>고객센터</v-btn></v-col>
+      <v-col><v-btn href='/login'>로그인</v-btn></v-col>
+      <v-col><v-btn href='/join'>회원가입</v-btn></v-col>
+      <v-col><v-btn href='/order_list'>주문조회</v-btn></v-col>
+      <v-col><v-btn href='/customer_center'>고객센터</v-btn></v-col>
     </v-app-bar>
     <v-row aria-rowspan="800px"></v-row>
     <v-row

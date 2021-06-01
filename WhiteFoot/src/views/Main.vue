@@ -29,28 +29,30 @@
       </v-sheet>
     </v-carousel-item>
   </v-carousel>
-<v-divider></v-divider>
   <v-row>
-    <v-row></v-row>
-    <v-row>
-    Best Seller
+    <v-divider></v-divider>
+  </v-row>
+  <v-row>
+    <v-col></v-col>
+    <v-row aria-rowspan="2">
+      <v-col>Best Seller</v-col>
     </v-row>
-    <v-row justify= "space-around">
+
+  </v-row>
+  <v-row justify= "space-around">
       <v-col
-      v-for="count in 12"
-      :key="count"
+      v-for="item in BEST_SELLERS"
+      :key="item.name"
       cols="3"
       >
-      <v-card
-      class="pa-3"
-      outlined
-      >
-      아이템 이미지
-      <v-card>아이템은 이런거다</v-card>
-      </v-card>
-
+        <v-card
+        class="pa-3"
+        outlined
+        >
+        {{item.name}}
+          <v-card>{{item.calories}}</v-card>
+        </v-card>
       </v-col>
-    </v-row>
   </v-row>
 
 
@@ -75,6 +77,48 @@
           'Third',
           'Fourth',
           'Fifth',
+        ],
+        BEST_SELLERS: [
+          {
+            name: 'Frozen Yogurt',
+            calories: 159,
+          },
+          {
+            name: 'Ice cream sandwich',
+            calories: 237,
+          },
+          {
+            name: 'Eclair',
+            calories: 262,
+          },
+          {
+            name: 'Cupcake',
+            calories: 305,
+          },
+          {
+            name: 'Gingerbread',
+            calories: 356,
+          },
+          {
+            name: 'Jelly bean',
+            calories: 375,
+          },
+          {
+            name: 'Lollipop',
+            calories: 392,
+          },
+          {
+            name: 'Honeycomb',
+            calories: 408,
+          },
+          {
+            name: 'Donut',
+            calories: 452,
+          },
+          {
+            name: 'KitKat',
+            calories: 518,
+          },
         ],
       }
     },

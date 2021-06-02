@@ -21,15 +21,12 @@
         </v-sparkline>
       </v-sheet>
     </v-card-text>
-
     <v-card-text>
       <div class="text-h4 font-weight-thin">
         Sales Last 24h
       </div>
     </v-card-text>
-
     <v-divider></v-divider>
-
     <v-card-actions class="justify-center">
     </v-card-actions>
   </v-card>

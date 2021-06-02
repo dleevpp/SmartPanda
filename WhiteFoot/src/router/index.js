@@ -12,7 +12,7 @@ import product_submit from '@/views/product_submit'
 import Product from '@/views/Product'
 import Admin from '@/views/Admin'
 import member_inform from '@/views/member_inform'
-
+import product_control from '@/views/product_control'
 
 Vue.use(VueRouter)
 
@@ -26,6 +26,11 @@ const routes = [
     path: '/member_inform',
     name: 'member_inform',
     component: member_inform
+  },
+  {
+    path: '/product_control',
+    name: 'product_control',
+    component: product_control
   },
   {
     path: '/admin',

@@ -35,7 +35,7 @@
         sm="6"
       >
         <v-textarea
-          label="상품이름"
+          label="가격"
           auto-grow
           outlined
           rows="1"
@@ -52,7 +52,7 @@
         sm="6"
       >
         <v-textarea
-          label="상품이름"
+          label="제조사"
           auto-grow
           outlined
           rows="1"
@@ -69,7 +69,7 @@
         sm="6"
       >
         <v-textarea
-          label="상품이름"
+          label="제조국가"
           auto-grow
           outlined
           rows="1"
@@ -105,7 +105,7 @@
         sm="6"
       >
         <v-textarea
-          label="상품이름"
+          label="가격"
           auto-grow
           outlined
           rows="1"

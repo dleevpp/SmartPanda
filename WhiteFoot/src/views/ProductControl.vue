@@ -42,7 +42,7 @@ export default {
           {
             name: 'naem1',
             score: '4.5',
-            source: '_product_submit',
+            source: 'product-submit',
             im_g: require("@/assets/logo.png")
           },
           {

@@ -1,7 +1,8 @@
 <template >
   <div>
     <v-container fluid>
-      <v-col cols="20">
+      <v-col cols="20"
+        align="center">
         <v-card
         max-width="800"
         justify= "space-around">

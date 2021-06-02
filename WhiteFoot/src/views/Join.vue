@@ -3,10 +3,22 @@
     <v-form v-model="valid">
       <v-container>
         <v-row>
-          <v-col>기본정보</v-col>
-          <v-spacer/>
-          <v-col>*필수입력사항</v-col>
+          <v-col>기본정보 (*는 필수입력사항)</v-col>
         </v-row>
+        <v-spacer/>
+        <v-container
+          class="px-0"
+          fluid
+        >
+          <v-radio-group v-model="role" row mandatory>
+            <v-radio
+              v-for="n in ['개인 회원','사업자 회원']"
+              :key="n"
+              :label="n"
+              :value="n"
+            ></v-radio>
+          </v-radio-group>
+        </v-container>
         <v-spacer/>
         <v-row>
           <v-text-field
@@ -18,6 +30,7 @@
         </v-row>
         <v-row>
           <v-text-field
+            type="password"
             label="* 비밀번호"
             v-model="password"
             required
@@ -25,6 +38,7 @@
         </v-row>
         <v-row>
           <v-text-field
+            type="password"
             label="* 비밀번호 확인"
             v-model="passwordCheck"
             required
@@ -44,18 +58,18 @@
             required
           />
         </v-row>
+        <v-row align="center">
+          <v-col cols='auto'></v-col>
+          <v-col cols='auto'></v-col>
+          <v-col>   *본인은 만 14세 이상이며,<a href="privacy_inform_policy"> 개인정보 처리방침</a> 및 <a href="user_yakgwan">이용약관</a>을 확인하였으며 이에 동의합니다.
+          </v-col>
+          <v-btn block
+            @click="submit"
+            color="primary">
+            동의하고 회원가입
+          </v-btn>
+        </v-row>
       </v-container>
-    <v-row align="center">
-      <v-col cols='auto'></v-col>
-      <v-col cols='auto'></v-col>
-      <v-col>   *본인은 만 14세 이상이며,<a href="privacy_inform_policy"> 개인정보 처리방침</a> 및 <a href="user_yakgwan">이용약관</a>을 확인하였으며 이에 동의합니다.
-      </v-col>
-    </v-row>
-      <v-btn block
-        @click="submit"
-        color="primary">
-        동의하고 회원가입
-      </v-btn>
     </v-form>
 
     <div class="text-center">
@@ -96,6 +110,7 @@ export default {
     return {
       valid: true,
       dialog: false,
+      role: "",
       username: "",
       password: "",
       passwordCheck: "",
@@ -106,11 +121,13 @@ export default {
   methods: {
     submit() {
       if (this.password === this.passwordCheck) {
+        console.log(this.role)
         axios.post('User', {
           Username: this.username,
           Password: this.password,
           Address1: this.address1,
           Address2: this.address2,
+          Role: (this.role === '개인 회원') ? 'Customer' : 'Seller',
         })
         .then(() => this.dialog = true)
         .catch(e => console.log(e))

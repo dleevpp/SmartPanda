@@ -1,17 +1,22 @@
+using System;
 using System.Threading.Tasks;
 using BlackFoot;
 using BlackFoot.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
+[Authorize]
 [Route("api/[controller]")]
 [ApiController]
 public class UserController : ControllerBase
 {
+  private readonly ILogger<UserController> logger;
   private readonly SqliteDbContext context;
 
-  public UserController(SqliteDbContext context)
+  public UserController(ILogger<UserController> logger, SqliteDbContext context)
   {
+    this.logger = logger;
     this.context = context;
   }
 
@@ -22,11 +27,12 @@ public class UserController : ControllerBase
     return (user != null) ? Ok(user) : NotFound();
   }
 
+  [AllowAnonymous]
   [HttpPost]
   public async Task<IActionResult> Register(User user)
   {
     context.Users.Add(user);
     await context.SaveChangesAsync();
-    return CreatedAtAction(nameof(GetUser), new { Id = user.Id }, user);
+    return CreatedAtAction(nameof(GetUser), new { id = user.Id }, user);
   }
 }

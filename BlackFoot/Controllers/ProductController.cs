@@ -2,9 +2,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using BlackFoot;
 using BlackFoot.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
+[Authorize]
 [Route("api/[controller]")]
 [ApiController]
 public class ProductController : ControllerBase
@@ -30,6 +32,7 @@ public class ProductController : ControllerBase
     return (products.Count > 0) ? Ok(products) : NotFound();
   }
 
+  [Authorize(Roles = "Sellers")]
   [HttpPost]
   public async Task<IActionResult> PostProduct(Product product)
   {

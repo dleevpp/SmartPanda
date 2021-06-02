@@ -9,19 +9,22 @@
     <v-form>
           <v-text-field
             label="아이디"
+            v-model="username"
             required
           ></v-text-field>
     </v-form>
     <v-form>
           <v-text-field
             label="비밀번호"
+            v-model="password"
             required
           ></v-text-field>
     </v-form>
     <v-btn
     class="ar-4"
     type="submit"
-    color="primary">로그인</v-btn>
+    color="primary"
+    @click="login">로그인</v-btn>
     </v-card-text>
     </v-card-title>
 
@@ -43,8 +46,32 @@
   </v-container>
 </template>
 <script>
-export default {
+import axios from '../axios'
 
+export default {
+  data() {
+    return {
+      username: "",
+      password: "",
+    }
+  },
+  methods: {
+    login() {
+      axios.post('Account/login', {
+        username: this.username,
+        password: this.password,
+      })
+      .then(res => this.afterLogin(res.data))
+      .catch(e => console.log(e))
+    },
+    afterLogin(result) {
+      localStorage.setItem('username', result.username)
+      localStorage.setItem('role', result.role)
+      localStorage.setItem('accessToken', result.accessToken)
+      localStorage.setItem('refreshToken', result.refreshToken)
+      this.$router.push({ path: '/' })
+    }
+  }
 }
 </script>
 <style lang="">

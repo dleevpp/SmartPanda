@@ -34,24 +34,6 @@ namespace BlackFoot.Migrations
                     b.ToTable("Coupons");
                 });
 
-            modelBuilder.Entity("BlackFoot.Models.Inquiry", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Content")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Inquiries");
-                });
-
             modelBuilder.Entity("BlackFoot.Models.Order", b =>
                 {
                     b.Property<long>("Id")
@@ -156,6 +138,25 @@ namespace BlackFoot.Migrations
                     b.ToTable("Replies");
                 });
 
+            modelBuilder.Entity("BlackFoot.Models.Review", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Content")
+                        .HasColumnType("TEXT");
+
+                    b.Property<ulong>("Rating")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasDefaultValue(0ul);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Reviews");
+                });
+
             modelBuilder.Entity("BlackFoot.Models.Role", b =>
                 {
                     b.Property<long>("Id")
@@ -192,13 +193,27 @@ namespace BlackFoot.Migrations
                         .HasColumnType("INTEGER")
                         .HasDefaultValue(1000L);
 
+                    b.Property<long?>("RoleId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("RoleId");
+
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("BlackFoot.Models.User", b =>
+                {
+                    b.HasOne("BlackFoot.Models.Role", "Role")
+                        .WithMany()
+                        .HasForeignKey("RoleId");
+
+                    b.Navigation("Role");
                 });
 #pragma warning restore 612, 618
         }

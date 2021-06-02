@@ -1,8 +1,10 @@
 using System.Threading.Tasks;
 using BlackFoot;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
+[Authorize]
 [Route("api/[controller]")]
 [ApiController]
 public class QuestionController : ControllerBase

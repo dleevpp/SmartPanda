@@ -1,13 +1,134 @@
 <template>
-  <div>
-    상품등록
-  </div>
+  <v-container>
+    <v-row>
+      <v-col>
+        <v-file-input
+    label="사진 첨부"
+    filled
+    prepend-icon="mdi-camera"
+  ></v-file-input>
+      </v-col>
+      <v-col>
+        <v-row>
+        <v-col>
+          상품이름
+        </v-col>
+        <v-col
+        cols="12"
+        sm="6"
+      >
+        <v-textarea
+          label="상품이름"
+          auto-grow
+          outlined
+          rows="1"
+          row-height="15"
+        ></v-textarea>
+      </v-col>
+      </v-row>
+      <v-row>
+        <v-col>
+          가격
+        </v-col>
+        <v-col
+        cols="12"
+        sm="6"
+      >
+        <v-textarea
+          label="상품이름"
+          auto-grow
+          outlined
+          rows="1"
+          row-height="15"
+        ></v-textarea>
+      </v-col>
+      </v-row>
+      <v-row>
+        <v-col>
+          제조사
+        </v-col>
+        <v-col
+        cols="12"
+        sm="6"
+      >
+        <v-textarea
+          label="상품이름"
+          auto-grow
+          outlined
+          rows="1"
+          row-height="15"
+        ></v-textarea>
+      </v-col>
+      </v-row>
+      <v-row>
+        <v-col>
+          제조국가
+        </v-col>
+        <v-col
+        cols="12"
+        sm="6"
+      >
+        <v-textarea
+          label="상품이름"
+          auto-grow
+          outlined
+          rows="1"
+          row-height="15"
+        ></v-textarea>
+      </v-col>
+      </v-row>
+      <v-row>
+        <v-col>
+          상품 분류
+        </v-col>
+        <v-col
+          cols="12"
+          sm="6"
+        >
+          <v-select
+            v-model="value"
+            :items="items"
+            chips
+            label="상품 분류"
+            multiple
+            solo
+          ></v-select>
+        </v-col>
+      </v-row>
+      <v-divider/>
+      <v-row>
+        <v-col>
+          가격 :
+        </v-col>
+        <v-col
+        cols="12"
+        sm="6"
+      >
+        <v-textarea
+          label="상품이름"
+          auto-grow
+          outlined
+          rows="1"
+          row-height="15"
+        ></v-textarea>
+      </v-col>
+      </v-row>
+
+      </v-col>
+    </v-row>
+    <v-row><v-divider></v-divider></v-row>
+    <v-row><v-spacer></v-spacer></v-row>
+    <v-row><v-btn>등록하기</v-btn></v-row>
+  </v-container>
 </template>
 <script>
-export default {
-    
-}
+export default{
+    data: () => ({
+      items: ['애플', '삼성', '케이스', '악세서리'],
+      value: ['애플', '삼성', '케이스', '악세서리'],
+    }),
+  }
 </script>
 <style lang="">
-    
+
 </style>

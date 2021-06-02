@@ -69,12 +69,85 @@
       </v-row>
       </v-col>
     </v-row>
+    <v-row><v-divider></v-divider></v-row>
+    <v-row><v-spacer></v-spacer></v-row>
+    <v-simple-table>
+                <template v-slot:default>
+                  <thead>
+                    <tr>
+                      <th>아이디</th>
+                      <th>리뷰</th>
+                      <th>별점</th>
+                      <th>상세보기</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      v-for="item in desserts"
+                      :key="item.id"
+                    >
+                      <td>{{ item.id }}</td>
+                      <td>{{ item.rv }}</td>
+                      <td>4.5</td>
+                      <td><a v-bind:href="item.review">상세보기</a></td>
+                    </tr>
+                  </tbody>
+                </template>
+      </v-simple-table>
   </v-container>
 </template>
 <script>
 export default {
+   data () {
+      return {
+        desserts: [
+          {
+            id: 'Frozen Yogurt',
+            rv: 159,
+            score:'4.5',
+            review: 'review3'
+          },
+          {
+            id: 'Ice cream sandwich',
+            rv: 237,
+          },
+          {
+            id: 'Eclair',
+            rv: 262,
+          },
+          {
+            id: 'Cupcake',
+            rv: 305,
+          },
+          {
+            id: 'Gingerbread',
+            rv: 356,
+          },
+          {
+            id: 'Jelly bean',
+            rv: 375,
+          },
+          {
+            id: 'Lollipop',
+            rv: 392,
+          },
+          {
+            id: 'Honeycomb',
+            rv: 408,
+          },
+          {
+            id: 'Donut',
+            rv: 452,
+          },
+          {
+            id: 'KitKat',
+            rv: 518,
+          },
+        ],
+      }
+    },
+  }
 
-}
 </script>
 <style lang="">
 

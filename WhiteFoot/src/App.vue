@@ -216,7 +216,7 @@
           { title: '회원가입', icon: 'mdi-login-variant', to: '/Join'},
           { title: '로그인', icon: 'mdi-key', to: '/Login'},
           { title: '고객센터', icon: 'mdi-help-box', to: '/customer_center'},
-        ],
+            ],
               apple:[
               {title: '아이폰', to:'/'},
               {title: '애플워치', to:'/'},

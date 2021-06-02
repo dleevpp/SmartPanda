@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlackFoot.Migrations
 {
     [DbContext(typeof(SqliteDbContext))]
-    [Migration("20210602080829_Implementation")]
-    partial class Implementation
+    [Migration("20210602085056_impl")]
+    partial class impl
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -166,12 +166,28 @@ namespace BlackFoot.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
                     b.ToTable("Roles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            Name = "Admin"
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            Name = "Seller"
+                        },
+                        new
+                        {
+                            Id = 3L,
+                            Name = "Customer"
+                        });
                 });
 
             modelBuilder.Entity("BlackFoot.Models.User", b =>

@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using BlackFoot.Models;
+using System.Linq;
 
 namespace BlackFoot
 {
@@ -57,9 +58,9 @@ namespace BlackFoot
         .Property(p => p.Rating)
         .HasDefaultValue(0);
       
+      string[] roles = { "Admin", "Seller", "Customer" };
       modelBuilder.Entity<Role>()
-        .Property(p => p.Name)
-        .IsRequired();
+        .HasData(roles.Select((role, index) => new { Id = (long)(index + 1), Name = role }));
         
       modelBuilder.Entity<User>()
         .Property(p => p.Username)

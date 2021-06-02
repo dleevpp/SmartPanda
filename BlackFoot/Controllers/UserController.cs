@@ -33,7 +33,6 @@ public class UserController : ControllerBase
   [HttpPost]
   public async Task<IActionResult> Register(RegisterRequest request)
   {
-    logger.LogWarning(request.Role);
     var role = context.Roles
       .Where(role => role.Name == request.Role)
       .First();

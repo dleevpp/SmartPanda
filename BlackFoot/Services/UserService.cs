@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using BlackFoot.Models;
 using Microsoft.Extensions.Logging;
 
 namespace BlackFoot.Services
@@ -40,20 +42,25 @@ namespace BlackFoot.Services
     {
       try
       {
-        var user = context.Users
-          .Where(user => user.Username == username)
-          .First();
-
-        switch (user.Role.Name)
-        {
-        case "Admin":     return UserRoles.Admin;
-        case "Seller":    return UserRoles.Seller;
-        case "Customer":  return UserRoles.Customer;
-        default:          return string.Empty;
-        }
+        var query = from u in context.Users
+                    join r in context.Roles on u.Role.Id equals r.Id
+                    where u.Username == username
+                    select new User()
+                    {
+                      Id = u.Id,
+                      Username = u.Username,
+                      Password = u.Password,
+                      Address1 = u.Address1,
+                      Address2 = u.Address2,
+                      Role = r,
+                    };
+        var user = query.First();
+        return user.Role.Name;
+        // return user.Role.Name;
       }
-      catch
+      catch (Exception e)
       {
+        logger.LogWarning(e.Source);
         return string.Empty;
       }
     }

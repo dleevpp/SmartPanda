@@ -96,23 +96,7 @@
         </v-col>
       </v-row>
       <v-divider/>
-      <v-row>
-        <v-col>
-          가격 :
-        </v-col>
-        <v-col
-        cols="12"
-        sm="6"
-      >
-        <v-textarea
-          label="가격"
-          auto-grow
-          outlined
-          rows="1"
-          row-height="15"
-        ></v-textarea>
-      </v-col>
-      </v-row>
+
 
       </v-col>
     </v-row>

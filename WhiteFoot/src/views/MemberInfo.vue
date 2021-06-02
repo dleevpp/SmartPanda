@@ -1,86 +1,70 @@
 <template >
   <v-container
-  fluid
-  outlined>
+    fluid
+    outlined>
+    <v-row
+      justify= "space-around">
+        <th>회원 관리</th>
+    </v-row>
     <v-simple-table>
-                <template v-slot:default>
-                  <thead>
-                    <tr>
-                      <th>아이디</th>
-                      <th>비밀번호</th>
-                      <th>주소</th>
-                      <th>상세주소</th>
-
-                      <th>삭제</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr
-                      v-for="item in desserts"
-                      :key="item.name"
-                    >
-                      <td>{{ item.id }}</td>
-                      <td>{{ item.pw }}</td>
-                      <td>수량</td>
-                      <td>가격</td>
-                      <td><v-btn>삭제</v-btn></td>
-                    </tr>
-                  </tbody>
-                </template>
-              </v-simple-table>
+      <template v-slot:default>
+        <thead>
+          <tr>
+            <th>아이디</th>
+            <th>계정 유형</th>
+            <th>주소</th>
+            <th>상세주소</th>
+            <th>삭제</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="user in users"
+            :key="user.id"
+          >
+            <td>{{ user.username }}</td>
+            <td>{{ getUserRoleText(user.role.name) }}</td>
+            <td>{{ user.address1 }}</td>
+            <td>{{ user.address2 }}</td>
+            <td><v-btn @click="deleteUser(user.id)">삭제</v-btn></td>
+          </tr>
+        </tbody>
+      </template>
+    </v-simple-table>
   </v-container>
 </template>
 <script>
+import axios from '../axios'
+import auth from '../auth'
+
 export default {
  data () {
-      return {
-        desserts: [
-          {
-            id: 'id1',
-            pw: '2021-04-18',
-            writer: 'User1'
-          },
-          {
-            id: 'Ice cream sandwich',
-            pw: 237,
-          },
-          {
-            id: 'Eclair',
-            pw: 262,
-          },
-          {
-            id: 'Cupcake',
-            pw: 305,
-          },
-          {
-            id: 'Gingerbread',
-            pw: 356,
-          },
-          {
-            id: 'Jelly bean',
-            pw: 375,
-          },
-          {
-            id: 'Lollipop',
-            pw: 392,
-          },
-          {
-            id: 'Honeycomb',
-            pw: 408,
-          },
-          {
-            id: 'Donut',
-            pw: 452,
-          },
-          {
-            id: 'KitKat',
-            pw: 518,
-          },
-        ],
-      }
+    return {
+      users: [],
+    }
+  },
+  created() {
+    this.getUsers();
+  },
+  methods: {
+    getUsers() {
+      axios.get('User/all', auth.axiosConfig)
+        .then(res => {
+          console.log(res)
+          this.users = res.data
+        })
+        .catch(e => console.log(e))
     },
+    getUserRoleText(role) {
+      if (role === "Admin")     return '관리자'
+      if (role === "Seller")    return '사업자 회원'
+      if (role === "Customer")  return '개인 회원'
+      return ''
+    },
+    deleteUser(id) {
+      axios.delete(`User/${id}`, auth.axiosConfig)
+        .catch(e => console.log(e))
+    }
+  }
 }
 </script>
-<style lang="">
-
-</style>

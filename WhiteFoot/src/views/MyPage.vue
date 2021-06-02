@@ -33,7 +33,7 @@
           </v-row>
         </v-card-text>
 
-        <v-space></v-space>
+        <v-spacer></v-spacer>
 
         <v-card-text>
           <v-row>
@@ -83,7 +83,10 @@ export default {
       const username = localStorage.getItem('username')
       console.log(username)
       axios.get(`User?username=${username}`, auth.axiosConfig)
-        .then(res => this.user = res.data)
+        .then(res => {
+          console.log(res)
+          this.user = res.data
+        })
         .catch(e => console.log(e))
     },
     getUserRoleText() {

@@ -29,6 +29,15 @@ public class UserController : ControllerBase
     return (user != null) ? Ok(user) : NotFound();
   }
 
+  [HttpGet]
+  public IActionResult GetUserByName([FromQuery(Name = "username")] string username)
+  {
+    var user = context.Users
+      .Where(user => user.Username == username)
+      .First();
+    return (user != null) ? Ok(user) : NotFound();
+  }
+
   [AllowAnonymous]
   [HttpPost]
   public async Task<IActionResult> Register(RegisterRequest request)

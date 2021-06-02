@@ -10,7 +10,6 @@ const auth = {
         audience: 'https://mywebapi.com',
         issuer: 'https://mywebapi.com',
       })
-      console.log('success')
       return true
     }
     catch (err) {
@@ -31,6 +30,11 @@ const auth = {
       }
       console.log(err.message)
       return false
+    }
+  },
+  axiosConfig: {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('accessToken')}`
     }
   }
 }

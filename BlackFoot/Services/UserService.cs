@@ -56,7 +56,6 @@ namespace BlackFoot.Services
                     };
         var user = query.First();
         return user.Role.Name;
-        // return user.Role.Name;
       }
       catch (Exception e)
       {

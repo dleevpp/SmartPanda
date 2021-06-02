@@ -1,6 +1,6 @@
 <template >
 <v-container fluid>
-
+<v-col cols="20">
   <v-card
   max-width="800"
   justify= "space-around">
@@ -40,6 +40,7 @@
     </div>
     </v-row>
     </v-card>
+    </v-col>
   </v-container>
 </template>
 <script>

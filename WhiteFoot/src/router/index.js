@@ -11,6 +11,7 @@ import Order_list from '@/views/Order_list'
 import product_submit from '@/views/product_submit'
 import Product from '@/views/Product'
 import Admin from '@/views/Admin'
+import member_inform from '@/views/member_inform'
 
 
 Vue.use(VueRouter)
@@ -20,6 +21,11 @@ const routes = [
     path: '/',
     name: 'Main',
     component: Main
+  },
+  {
+    path: '/member_inform',
+    name: 'member_inform',
+    component: member_inform
   },
   {
     path: '/admin',

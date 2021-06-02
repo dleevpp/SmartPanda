@@ -91,8 +91,6 @@ export default {
             price: 3.7,
             number: 67,
           },
-
-
         ],
       }
     },

@@ -35,7 +35,7 @@
         sm="6"
       >
         <v-textarea
-          label="상품이름"
+          label="가격"
           auto-grow
           outlined
           rows="1"
@@ -52,7 +52,7 @@
         sm="6"
       >
         <v-textarea
-          label="상품이름"
+          label="제조사"
           auto-grow
           outlined
           rows="1"
@@ -69,7 +69,7 @@
         sm="6"
       >
         <v-textarea
-          label="상품이름"
+          label="제조국가"
           auto-grow
           outlined
           rows="1"
@@ -96,24 +96,6 @@
         </v-col>
       </v-row>
       <v-divider/>
-      <v-row>
-        <v-col>
-          가격 :
-        </v-col>
-        <v-col
-        cols="12"
-        sm="6"
-      >
-        <v-textarea
-          label="상품이름"
-          auto-grow
-          outlined
-          rows="1"
-          row-height="15"
-        ></v-textarea>
-      </v-col>
-      </v-row>
-
       </v-col>
     </v-row>
     <v-row><v-divider></v-divider></v-row>

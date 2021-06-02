@@ -8,7 +8,7 @@ import Join from '@/views/Join'
 import Login from '@/views/Login'
 import MyPage from '@/views/MyPage'
 import Order_list from '@/views/Order_list'
-import _product_submit from '@/views/_product_submit'
+import ProductSubmit from '@/views/ProductSubmit'
 import Product from '@/views/Product'
 import Admin from '@/views/Admin'
 import member_inform from '@/views/member_inform'
@@ -79,7 +79,7 @@ const routes = [
   {//상품등록
     path: '/_product_submit',
     name: 'product_submit',
-    component: _product_submit
+    component: ProductSubmit
   },
   {//상품 정보
     path: '/Product',

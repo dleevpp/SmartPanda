@@ -12,6 +12,7 @@ import ProductSubmit from '@/views/ProductSubmit'
 import Product from '@/views/Product'
 import Admin from '@/views/Admin'
 import MemberInfo from '@/views/MemberInfo'
+import ProductControl from '@/views/ProductControl'
 import auth from '@/auth'
 
 Vue.use(VueRouter)
@@ -85,6 +86,12 @@ const routes = [
     path: '/product-submit',
     name: 'ProductSubmit',
     component: ProductSubmit,
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/product-control',
+    name: 'ProductControl',
+    component: ProductControl,
     meta: { requiresAuth: true }
   },
   {//상품 정보

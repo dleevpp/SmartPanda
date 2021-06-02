@@ -13,6 +13,7 @@ import Product from '@/views/Product'
 import Admin from '@/views/Admin'
 import MemberInfo from '@/views/MemberInfo'
 import ProductControl from '@/views/ProductControl'
+import ProdcutModify from '@/views/ProductModify'
 import auth from '@/auth'
 
 Vue.use(VueRouter)
@@ -23,6 +24,12 @@ const routes = [
     name: 'Main',
     component: Main,
     meta: { requiresAuth: false }
+  },
+  {
+    path: '/product-modify',
+    name: 'ProductModify',
+    component: ProdcutModify,
+    meta: {requiresAuth: true}
   },
   {
     path: '/member_info',

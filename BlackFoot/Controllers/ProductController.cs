@@ -29,7 +29,9 @@ public class ProductController : ControllerBase
     return (product != null) ? Ok(product) : NotFound();
   }
 
+  [AllowAnonymous]
   [HttpGet]
+  [Route("all")]
   public async Task<IActionResult> GetProducts()
   {
     var products = await context.Products.ToListAsync();

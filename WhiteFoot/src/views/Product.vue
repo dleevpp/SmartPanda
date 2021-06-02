@@ -97,55 +97,20 @@
   </v-container>
 </template>
 <script>
+import axios from '../axios'
+import auth from '../auth'
+
 export default {
    data () {
       return {
-        desserts: [
-          {
-            id: 'Frozen Yogurt',
-            rv: 159,
-            score:'4.5',
-            review: 'review3'
-          },
-          {
-            id: 'Ice cream sandwich',
-            rv: 237,
-          },
-          {
-            id: 'Eclair',
-            rv: 262,
-          },
-          {
-            id: 'Cupcake',
-            rv: 305,
-          },
-          {
-            id: 'Gingerbread',
-            rv: 356,
-          },
-          {
-            id: 'Jelly bean',
-            rv: 375,
-          },
-          {
-            id: 'Lollipop',
-            rv: 392,
-          },
-          {
-            id: 'Honeycomb',
-            rv: 408,
-          },
-          {
-            id: 'Donut',
-            rv: 452,
-          },
-          {
-            id: 'KitKat',
-            rv: 518,
-          },
-        ],
+        item: null
       }
     },
+    created() {
+      axios.get(`Product${this.$route.query.id}`, auth.axiosConfig)
+        .then(res => this.item = res.data)
+        .catch(e => console.log(e))
+    }
   }
 
 </script>

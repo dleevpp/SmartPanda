@@ -52,6 +52,7 @@
         <v-tab :to="'/customer-center'">
           <h3 class="font-weight-bold">고객센터</h3>
         </v-tab>
+
       </v-tabs>
     </v-app-bar>
     <v-row aria-rowspan="800px"></v-row>
@@ -227,6 +228,7 @@
         { title: '주문조회', icon: 'mdi-lingerie', to: '/orders'},
         { title: '회원가입', icon: 'mdi-login-variant', to: '/join'},
         { title: '로그인', icon: 'mdi-key', to: '/login'},
+        { title: '상품등록', icon:'mdi-briefcase-plus-outline', to:'/product-submit'},
         { title: '고객센터', icon: 'mdi-help-box', to: '/customer-center'},
       ],
       apple:[

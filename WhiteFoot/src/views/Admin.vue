@@ -45,12 +45,6 @@
 
       <v-icon>mdi-face-agent</v-icon>
     </v-btn>
-
-    <v-btn to='product-submit'>
-      <span>상품등록</span>
-
-      <v-icon>mdi-reproduction</v-icon>
-    </v-btn>
   </v-bottom-navigation>
   </v-card>
 

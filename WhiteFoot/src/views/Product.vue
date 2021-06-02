@@ -72,28 +72,28 @@
     <v-row><v-divider></v-divider></v-row>
     <v-row><v-spacer></v-spacer></v-row>
     <v-simple-table>
-                <template v-slot:default>
-                  <thead>
-                    <tr>
-                      <th>아이디</th>
-                      <th>리뷰</th>
-                      <th>별점</th>
-                      <th>상세보기</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr
-                      v-for="item in desserts"
-                      :key="item.id"
-                    >
-                      <td>{{ item.id }}</td>
-                      <td>{{ item.rv }}</td>
-                      <td>{{item.score}}/5.0</td>
-                      <td><a v-bind:href="item.review">상세보기</a></td>
-                    </tr>
-                  </tbody>
-                </template>
-      </v-simple-table>
+      <template v-slot:default>
+        <thead>
+          <tr>
+            <th>아이디</th>
+            <th>리뷰</th>
+            <th>별점</th>
+            <th>상세보기</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="item in desserts"
+            :key="item.id"
+          >
+            <td>{{ item.id }}</td>
+            <td>{{ item.rv }}</td>
+            <td>{{item.score}}/5.0</td>
+            <td><a v-bind:href="item.review">상세보기</a></td>
+          </tr>
+        </tbody>
+      </template>
+    </v-simple-table>
   </v-container>
 </template>
 <script>

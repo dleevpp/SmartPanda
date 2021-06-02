@@ -86,20 +86,23 @@
             color="primary"
             v-bind="attrs"
             v-on="on"
+            to='/product-list'
+          >
+            전체
+          </v-tab>
+        </template>
+      </v-menu>
+      <v-menu offset-y>
+        <template v-slot:activator="{ on, attrs }">
+          <v-tab
+            color="primary"
+            v-bind="attrs"
+            v-on="on"
+            to='/product-list?company=애플'
           >
             애플
           </v-tab>
         </template>
-        <v-list>
-          <v-list-item
-            v-for="item in apple"
-            :key="item.title"
-            :to="item.to"
-            link
-          >
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
       </v-menu>
       <v-menu offset-y>
         <template v-slot:activator="{ on, attrs }">
@@ -107,20 +110,11 @@
             color="primary"
             v-bind="attrs"
             v-on="on"
+            to='/product-list?company=삼성'
           >
             삼성
           </v-tab>
         </template>
-        <v-list>
-          <v-list-item
-            v-for="item in samsung"
-            :key="item.title"
-            :to="item.to"
-            link
-          >
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
       </v-menu>
       <v-menu offset-y>
         <template v-slot:activator="{ on, attrs }">
@@ -128,20 +122,11 @@
             color="primary"
             v-bind="attrs"
             v-on="on"
+            to='/product-list?category=케이스'
           >
             케이스
           </v-tab>
         </template>
-        <v-list>
-          <v-list-item
-            v-for="item in cases"
-            :key="item.title"
-            :to="item.to"
-            link
-          >
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
       </v-menu>
       <v-menu offset-y>
         <template v-slot:activator="{ on, attrs }">
@@ -149,62 +134,11 @@
             color="primary"
             v-bind="attrs"
             v-on="on"
+            to='/product-list?company=악세서리'
           >
-            필름
+            악세서리
           </v-tab>
         </template>
-        <v-list>
-          <v-list-item
-            v-for="item in film"
-            :key="item.title"
-            :to="item.to"
-            link
-          >
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
-      <v-menu offset-y>
-        <template v-slot:activator="{ on, attrs }">
-          <v-tab
-            color="gray"
-            v-bind="attrs"
-            v-on="on"
-          >
-            충전용품
-          </v-tab>
-        </template>
-        <v-list>
-          <v-list-item
-            v-for="item in charger"
-            :key="item.title"
-            :to="item.to"
-            link
-          >
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
-      <v-menu offset-y>
-        <template v-slot:activator="{ on, attrs }">
-          <v-tab
-            color="primary"
-            v-bind="attrs"
-            v-on="on"
-          >
-            차량용품
-          </v-tab>
-        </template>
-        <v-list>
-          <v-list-item
-            v-for="item in car"
-            :key="item.title"
-            :to="item.to"
-            link
-          >
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
       </v-menu>
       </v-tabs>
     </v-toolbar>
@@ -231,33 +165,6 @@
         { title: '상품등록', icon:'mdi-briefcase-plus-outline', to:'/product-submit'},
         { title: '고객센터', icon: 'mdi-help-box', to: '/customer-center'},
       ],
-      apple:[
-        {title: '아이폰', to:'/'},
-        {title: '애플워치', to:'/'},
-        {title: '에어팟', to:'/'},
-      ],
-      samsung:[
-        {title: '갤럭시', to:'/'},
-        {title: '갤럭시워치', to:'/'},
-        {title: '버즈', to:'/'}
-      ],
-      cases:[
-        {title:'소재별', to:'/'},
-        {title:'기능별', to:'/'}
-      ],
-      film:[
-        {title:'소재별', to:'/'},
-        {title:'기능별', to:'/'}
-      ],
-      charger:[
-        {title:'고속 충전', to:'/'},
-        {title:'보조배터리',to:'/'},
-      ],
-      car:[
-        {title:'충전기', to:'/'},
-        {title:'거치대', to:'/'}
-      ],
-
      }),
   }
 </script>

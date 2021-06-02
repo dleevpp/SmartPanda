@@ -1,20 +1,24 @@
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using BlackFoot;
 using BlackFoot.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 [Authorize]
 [Route("api/[controller]")]
 [ApiController]
 public class ProductController : ControllerBase
 {
+    private readonly ILogger<ProductController> logger;
   private readonly SqliteDbContext context;
 
-  public ProductController(SqliteDbContext context)
+  public ProductController(ILogger<ProductController> logger, SqliteDbContext context)
   {
+    this.logger = logger;
     this.context = context;
   }
 
@@ -32,13 +36,23 @@ public class ProductController : ControllerBase
     return (products.Count > 0) ? Ok(products) : NotFound();
   }
 
-  [Authorize(Roles = "Sellers")]
+  [Authorize]
   [HttpPost]
-  public async Task<IActionResult> PostProduct(Product product)
+  public async Task<IActionResult> PostProduct(SubmitRequest request)
   {
+    var product = new Product()
+    {
+      Category = request.Category,
+      Name = request.Name,
+      Price = request.Price,
+      Company = request.Company,
+      Country = request.Country,
+      Sales = 0,
+      Image = request.Image,
+    };
     context.Products.Add(product);
     await context.SaveChangesAsync();
-    return CreatedAtAction(nameof(GetProduct), new { Id = product.Id }, product);
+    return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
   }
 
   [HttpPut("{id}")]
@@ -83,4 +97,25 @@ public class ProductController : ControllerBase
   }
 
   private bool ProductExists(long id) => context.Products.Any(e => e.Id == id);
+}
+
+public class SubmitRequest
+{
+  [JsonPropertyName("category")]
+  public string Category { get; set; }
+  
+  [JsonPropertyName("name")]
+  public string Name { get; set; }
+  
+  [JsonPropertyName("price")]
+  public long Price { get; set; }
+  
+  [JsonPropertyName("company")]
+  public string Company { get; set; }
+
+  [JsonPropertyName("country")]
+  public string Country { get; set; }
+
+  [JsonPropertyName("image")]
+  public string Image { get; set; }
 }

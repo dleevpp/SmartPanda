@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Main from '@/views/Main'
-import About from '@/views/About'
 import Cart from '@/views/Cart'
 import CustomerCenter from '@/views/CustomerCenter'
 import Join from '@/views/Join'
@@ -14,6 +13,7 @@ import Admin from '@/views/Admin'
 import MemberInfo from '@/views/MemberInfo'
 import ProductControl from '@/views/ProductControl'
 import ProdcutModify from '@/views/ProductModify'
+import ProductList from '@/views/ProductList'
 import auth from '@/auth'
 
 Vue.use(VueRouter)
@@ -42,16 +42,6 @@ const routes = [
     name: 'Admin',
     component: Admin,
     meta: { requiresAuth: true }
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: About,
-    meta: { requiresAuth: true }
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    //component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
     path: '/cart',
@@ -105,8 +95,14 @@ const routes = [
     path: '/product',
     name: 'Product',
     component: Product,
-    meta: { requiresAuth: true }
+    meta: { requiresAuth: false }
   },
+  {//상품 정보
+    path: '/product-list',
+    name: 'Product List',
+    component: ProductList,
+    meta: { requiresAuth: false }
+  }
 ]
 
 const router = new VueRouter({

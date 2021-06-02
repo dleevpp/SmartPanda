@@ -88,7 +88,7 @@
                     >
                       <td>{{ item.id }}</td>
                       <td>{{ item.rv }}</td>
-                      <td>4.5</td>
+                      <td>{{item.score}}/5.0</td>
                       <td><a v-bind:href="item.review">상세보기</a></td>
                     </tr>
                   </tbody>

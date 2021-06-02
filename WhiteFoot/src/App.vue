@@ -209,41 +209,41 @@
   export default {
     data: () => ({
       drawer: null,
-              items: [
-          { title: '메인페이지', icon: 'mdi-home-variant-outline', to: '/'},
-          { title: '마이페이지', icon: 'mdi-file-account-outline', to: '/mypage'},
-          { title: '장바구니', icon: 'mdi-cart', to: '/cart'},
-          { title: '주문조회', icon: 'mdi-lingerie', to: '/orders'},
-          { title: '회원가입', icon: 'mdi-login-variant', to: '/join'},
-          { title: '로그인', icon: 'mdi-key', to: '/login'},
-          { title: '고객센터', icon: 'mdi-help-box', to: '/customer-center'},
-        ],
-              apple:[
-              {title: '아이폰', to:'/'},
-              {title: '애플워치', to:'/'},
-              {title: '에어팟', to:'/'},
-            ],
-            samsung:[
-              {title: '갤럭시', to:'/'},
-              {title: '갤럭시워치', to:'/'},
-              {title: '버즈', to:'/'}
-            ],
-            cases:[
-              {title:'소재별', to:'/'},
-              {title:'기능별', to:'/'}
-            ],
-            film:[
-              {title:'소재별', to:'/'},
-              {title:'기능별', to:'/'}
-            ],
-            charger:[
-              {title:'고속 충전', to:'/'},
-              {title:'보조배터리',to:'/'},
-            ],
-            car:[
-              {title:'충전기', to:'/'},
-              {title:'거치대', to:'/'}
-            ],
+      items: [
+        { title: '메인페이지', icon: 'mdi-home-variant-outline', to: '/'},
+        { title: '마이페이지', icon: 'mdi-file-account-outline', to: '/mypage'},
+        { title: '장바구니', icon: 'mdi-cart', to: '/cart'},
+        { title: '주문조회', icon: 'mdi-lingerie', to: '/orders'},
+        { title: '회원가입', icon: 'mdi-login-variant', to: '/join'},
+        { title: '로그인', icon: 'mdi-key', to: '/login'},
+        { title: '고객센터', icon: 'mdi-help-box', to: '/customer-center'},
+      ],
+      apple:[
+        {title: '아이폰', to:'/'},
+        {title: '애플워치', to:'/'},
+        {title: '에어팟', to:'/'},
+      ],
+      samsung:[
+        {title: '갤럭시', to:'/'},
+        {title: '갤럭시워치', to:'/'},
+        {title: '버즈', to:'/'}
+      ],
+      cases:[
+        {title:'소재별', to:'/'},
+        {title:'기능별', to:'/'}
+      ],
+      film:[
+        {title:'소재별', to:'/'},
+        {title:'기능별', to:'/'}
+      ],
+      charger:[
+        {title:'고속 충전', to:'/'},
+        {title:'보조배터리',to:'/'},
+      ],
+      car:[
+        {title:'충전기', to:'/'},
+        {title:'거치대', to:'/'}
+      ],
 
      }),
   }

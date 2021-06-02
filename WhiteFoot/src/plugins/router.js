@@ -11,6 +11,7 @@ import Orders from '@/views/Orders'
 import ProductSubmit from '@/views/ProductSubmit'
 import Product from '@/views/Product'
 import Admin from '@/views/Admin'
+import MemberInfo from '@/views/MemberInfo'
 import auth from '@/auth'
 
 Vue.use(VueRouter)
@@ -21,6 +22,12 @@ const routes = [
     name: 'Main',
     component: Main,
     meta: { requiresAuth: false }
+  },
+  {
+    path: '/member_info',
+    name: 'Member info',
+    component: MemberInfo,
+    meta: { requiresAuth: true }
   },
   {
     path: '/admin',

@@ -38,10 +38,10 @@
 
       <v-toolbar-title>SmartPanda</v-toolbar-title>
       <v-col aria-colspan="7"></v-col>
-      <v-col><v-btn href='/login'>로그인</v-btn></v-col>
-      <v-col><v-btn href='/join'>회원가입</v-btn></v-col>
-      <v-col><v-btn href='/order_list'>주문조회</v-btn></v-col>
-      <v-col><v-btn href='/customer_center'>고객센터</v-btn></v-col>
+      <v-col><v-btn href='login'>로그인</v-btn></v-col>
+      <v-col><v-btn href='join'>회원가입</v-btn></v-col>
+      <v-col><v-btn href='orders'>주문조회</v-btn></v-col>
+      <v-col><v-btn href='customer-center'>고객센터</v-btn></v-col>
     </v-app-bar>
     <v-row aria-rowspan="800px"></v-row>
     <v-row
@@ -60,7 +60,8 @@
     </v-banner>
   </v-row>
   <v-container fluid>
-    <v-toolbar dense='true'
+    <v-toolbar
+    dense
     outlined
     max-height="0">
       <v-tabs
@@ -210,12 +211,12 @@
       drawer: null,
               items: [
           { title: '메인페이지', icon: 'mdi-home-variant-outline', to: '/'},
-          { title: '마이페이지', icon: 'mdi-file-account-outline', to: '/MyPage'},
+          { title: '마이페이지', icon: 'mdi-file-account-outline', to: '/mypage'},
           { title: '장바구니', icon: 'mdi-cart', to: '/cart'},
-          { title: '주문조회', icon: 'mdi-lingerie', to: '/Order_list'},
-          { title: '회원가입', icon: 'mdi-login-variant', to: '/Join'},
-          { title: '로그인', icon: 'mdi-key', to: '/Login'},
-          { title: '고객센터', icon: 'mdi-help-box', to: '/customer_center'},
+          { title: '주문조회', icon: 'mdi-lingerie', to: '/orders'},
+          { title: '회원가입', icon: 'mdi-login-variant', to: '/join'},
+          { title: '로그인', icon: 'mdi-key', to: '/login'},
+          { title: '고객센터', icon: 'mdi-help-box', to: '/customer-center'},
         ],
               apple:[
               {title: '아이폰', to:'/'},

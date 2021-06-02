@@ -33,15 +33,26 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar app>
+    <v-app-bar app flat color="#F5DF4D">
       <v-app-bar-nav-icon @click="drawer = !drawer" />
 
-      <v-toolbar-title>SmartPanda</v-toolbar-title>
-      <v-col aria-colspan="7"></v-col>
-      <v-col><v-btn href='login'>로그인</v-btn></v-col>
-      <v-col><v-btn href='join'>회원가입</v-btn></v-col>
-      <v-col><v-btn href='orders'>주문조회</v-btn></v-col>
-      <v-col><v-btn href='customer-center'>고객센터</v-btn></v-col>
+      <v-toolbar-title style="width: 300px" class="font-weight-black">
+        SmartPanda
+      </v-toolbar-title>
+      <v-tabs color="#939597" right>
+        <v-tab :to="'/login'">
+          <h3 class="font-weight-bold">로그인</h3>
+        </v-tab>
+        <v-tab :to="'/join'">
+          <h3 class="font-weight-bold">회원가입</h3>
+        </v-tab>
+        <v-tab :to="'/orders'">
+          <h3 class="font-weight-bold">주문조회</h3>
+        </v-tab>
+        <v-tab :to="'/customer-center'">
+          <h3 class="font-weight-bold">고객센터</h3>
+        </v-tab>
+      </v-tabs>
     </v-app-bar>
     <v-row aria-rowspan="800px"></v-row>
     <v-row

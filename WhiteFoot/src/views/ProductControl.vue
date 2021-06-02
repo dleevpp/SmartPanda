@@ -9,6 +9,7 @@
                       <th>상품명</th>
                       <th>이미지</th>
                       <th>평점</th>
+                      <th>금일 판매 내역</th>
                       <th>삭제</th>
                       <th>수정</th>
                     </tr>
@@ -26,6 +27,7 @@
                       <p>{{item.im_g}}</p>
                       </td>
                       <td>{{item.score}}/5.0</td>
+                      <td>{{item.count}}</td>
                       <td><v-btn type="submit">삭제</v-btn></td>
                       <td><v-btn v-bind:to="item.source">수정</v-btn></td>
                     </tr>
@@ -42,8 +44,9 @@ export default {
           {
             name: 'naem1',
             score: '4.5',
-            source: 'product-submit',
-            im_g: require("@/assets/logo.png")
+            source: 'product-modify',
+            im_g: require("@/assets/logo.png"),
+            count: 24
           },
           {
             name: 'Ice cream sandwich',

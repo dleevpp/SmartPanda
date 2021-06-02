@@ -28,7 +28,6 @@
                       <td>{{item.score}}/5.0</td>
                       <td><v-btn type="submit">삭제</v-btn></td>
                       <td><v-btn v-bind:to="item.source">수정</v-btn></td>
-
                     </tr>
                   </tbody>
                 </template>
@@ -43,7 +42,7 @@ export default {
           {
             name: 'naem1',
             score: '4.5',
-            source: 'product_submit',
+            source: '_product_submit',
             im_g: require("@/assets/logo.png")
           },
           {
